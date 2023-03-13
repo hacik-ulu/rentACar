@@ -1,0 +1,33 @@
+﻿@model List<rentACarProject.Models.Domain.Customer>
+
+
+@{
+}
+<!--vertibanından gelen bilgileri döner ve ekrana listeler.--> 
+<h1>Müşteriler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Müşteri Adı</th>
+            <th>Müşteri Soyadı</th>
+            <th>Adres</th>
+            <th>Numara</th>
+            <th>Detayları Görüntüle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.FirstName</td>
+                <td>@customer.LastName</td>
+                <td>@customer.Adress</td>
+                <td>@customer.contactNumber</td>
+                <td><a href="Customers/View/@customer.Id">View</a></td> <!--Controllerdaki Customers yazılır.-->
+            </tr>
+        }
+    </tbody>
+</table>
